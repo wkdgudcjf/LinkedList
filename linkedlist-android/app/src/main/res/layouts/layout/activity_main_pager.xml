@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="#282828">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/coincidence">
+        </ImageView>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_alignParentTop="true"
+        android:id="@+id/mainViewPager"
+        android:layout_width="match_parent"
+        android:layout_weight="12"
+        android:layout_height="551dp">
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_rectangle">
+
+        <RelativeLayout
+            android:id="@+id/mainMenuHome_Entire"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/mainMenuHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_menu_home_select"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/mainMenuList_Entire"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/mainMenuList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_menu_list"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/mainMenuChat_Entire"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/mainMenuChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_menu_chat" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/mainMenuUser_Entire"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/mainMenuUser"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_menu_user" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

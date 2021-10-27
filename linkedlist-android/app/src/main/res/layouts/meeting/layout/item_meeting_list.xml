@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/backg"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    android:layout_marginTop="5.5dp"
+    android:layout_marginBottom="5.5dp"
+    android:layout_marginLeft="11dp"
+    android:layout_marginRight="11dp"
+    android:background="@drawable/meeting_bowling">
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/itemMeetingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="14.5dp"
+            android:layout_marginLeft="16dp"
+            android:text="볼링 한 게임 어때요?"
+            android:textColor="#FFFEFE"
+            app:fontWeight="bold"/>
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/itemMeetingUserCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15.5dp"
+            android:layout_marginTop="15dp"
+            android:text="4/6"
+            android:textColor="#FFFEFE"
+            app:fontWeight="bold"/>
+
+        <LinearLayout
+            android:id="@+id/itemMeetingUserPhotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp">
+            <include layout="@layout/item_meeting_list_user" />
+            <include layout="@layout/item_meeting_list_user" />
+            <include layout="@layout/item_meeting_list_user" />
+            <include layout="@layout/item_meeting_list_user" />
+            <include layout="@layout/item_meeting_list_user" />
+            <include layout="@layout/item_meeting_list_user" />
+            <include layout="@layout/item_meeting_list_user" />
+            <include layout="@layout/item_meeting_list_user" />
+        </LinearLayout>
+
+</RelativeLayout>

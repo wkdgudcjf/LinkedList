@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>우 연 - Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">우 연 - Admin</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 대시보드</a>
+                        </li>
+                        <li>
+                            <a href="exam.html"><i class="fa fa-eye fa-fw"></i> 심사</a>
+                        </li>
+                        <li>
+                            <a href="room.html"><i class="fa fa-tasks fa-fw"></i> 자동 방 개설</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">대시보드</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="dropdown">
+                        <div class="input-group dropdown-toggle" id="searchEmailDropdownMenu">
+                            <input type="text" class="form-control inputSearchEmail" placeholder="admin@linkedlist.com">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default btnAddAdmin" type="button">추가</button>
+                          </span>
+                        </div><!-- /input-group -->
+                        <ul class="dropdown-menu" aria-labelledby="searchEmailDropdownMenu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div><!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="bs-example" data-example-id="striped-table">
+                    <table class="table table-striped tableAdmin">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>이메일</th>
+                            <th>이름</th>
+                            <th>uid</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <script src="../js/firebase-init.js"></script>
+
+    <script src="../js/checkAdmin.js"></script>
+
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+
+    <script>
+        com.ep.linkedList.admin.auth.check();
+
+        $(".inputSearchEmail").on("keyup focusin",function(){
+            var email = $('.inputSearchEmail').val();
+            if(email.length == 0){
+                $('.dropdown').removeClass('open');
+                return;
+            }
+
+            firebase.database().ref('users/info')
+            .orderByChild('email')
+            .startAt(email)
+            .endAt(email+"\uf8ff")
+            .limitToFirst(3)
+            .once('value', function(snapshot) {
+                var users = snapshot.val() || {};
+                userDropdownMenuChanged(users);
+            });
+        });
+
+        function userDropdownMenuChanged(users){
+            var $dropdown = $('.dropdown-menu');
+            $dropdown.empty();
+            $.each(users, function (key, user) {
+                $('#templateEmailDropdownMenu').tmpl({uid : key,email : user.email}).appendTo($dropdown);
+            });
+            if($dropdown.children().length > 0){
+                $('.dropdown').addClass('open');
+            } else {
+                $('.dropdown').removeClass('open');
+            }
+        }
+
+        $('.dropdown-menu').on('click','.dropdown-item',function(e){
+            e.preventDefault();
+            var email = $(this).data('email');
+            $('.inputSearchEmail').val(email);
+            $('.dropdown').removeClass('open');
+        });
+
+        $('.btnAddAdmin').on('click',function(e){
+            var email = $('.inputSearchEmail').val();
+            var uid = $('.dropdown-item[data-email="'+email+'"]').data('uid');
+            if(uid){
+                firebase.database().ref('admin/' + uid).set(true);
+            } else {
+                alert("없는 아이디입니다.");
+            }
+        });
+
+        firebase.database().ref('admin').on('value', function(adminSnap) {
+            var users = [];
+            var uids = adminSnap.val() || {};
+            $.each(uids, function (uid) {
+                firebase.database().ref('users/info/'+ uid).once('value', function(userSnap, uid) {
+                    users.push(extend({uid : userSnap.key}, userSnap.val()));
+                    adminTableChanged(users);
+               });
+            });
+        });
+
+        function adminTableChanged(users){
+            var $tbody = $('.tableAdmin tbody');
+            $tbody.empty();
+
+            $.each(users, function(index, user){
+                $('#templateAdminTableRow').tmpl(
+                    {
+                        num : index,
+                        displayName : user.displayName,
+                        uid : user.uid,
+                        email : user.email
+                    }
+                ).appendTo($tbody);
+            });
+        }
+
+        $('.tableAdmin').on('click','.btnDeleteAdmin',function(e){
+            var uid = $(this).data('uid');
+            firebase.database().ref('admin/' + uid).remove();
+        });
+    </script>
+    <script id="templateEmailDropdownMenu" type="text/x-jquery-tmpl">
+        <li><a href="#" data-uid="${uid}" data-email="${email}" class="dropdown-item">${email}</a></li>
+    </script>
+    <script id="templateAdminTableRow" type="text/x-jquery-tmpl">
+        <tr>
+            <th scope="row">${num}</th>
+            <td>${email}</td>
+            <td>${displayName}</td>
+            <td>${uid}</td>
+            <td><input class="btn btn-default btnDeleteAdmin" type="button" data-uid="${uid}" value="삭제"></td>
+        </tr>
+    </script>
+
+</body>
+
+</html>

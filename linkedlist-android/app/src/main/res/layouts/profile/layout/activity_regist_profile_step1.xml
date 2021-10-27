@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ep.linkedlist.view.profile.RegistProfileActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 헤더 이미지 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:id="@+id/profile_imageView_header_step_1"
+                android:src="@drawable/profile_header_step_1"/>
+
+        </FrameLayout>
+
+        <!-- 현재 단계 -->
+        <!--
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/profile_imageView_currentStep"
+            android:src="@drawable/profile_current_step_1"/>
+            -->
+
+        <!-- 이름 입력 UI 시작 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/profile_imageView_name"
+            android:src="@drawable/profile_name"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="29.5dp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/profile_editText_name"
+            android:textSize="12dp"
+            android:id="@+id/profile_editText_name"
+            android:layout_marginLeft="42.5dp"
+            android:layout_marginRight="42.5dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:background="@null"
+            android:textColor="#000000"
+            android:textColorHint="#cecece"
+            android:maxLines="1"
+            android:maxLength="10" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_underline_name"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="43dp"
+            android:layout_marginTop="6dp" />
+        <!-- 이름 입력 UI 끝 -->
+
+        <!-- 닉네임 입력 UI 시작 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/profile_imageView_nickname"
+            android:src="@drawable/profile_nickname"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="39.5dp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:hint="@string/profile_editText_nickname"
+            android:textSize="12dp"
+            android:id="@+id/profile_editText_nickname"
+            android:layout_marginLeft="42.5dp"
+            android:layout_marginRight="42.5dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:background="@null"
+            android:textColor="#000000"
+            android:textColorHint="#cecece"
+            android:maxLines="1"
+            android:maxLength="10" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_underline_nickname"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="43dp"
+            android:layout_marginTop="6dp" />
+        <!-- 닉네임 입력 UI 끝 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <!-- 성별 선택 UI -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/profile_imageView_gender"
+                    android:src="@drawable/profile_gender"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginRight="42.5dp"
+                    android:layout_marginTop="39.5dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        android:id="@+id/profile_button_gender_male"
+                        android:src="@drawable/profile_gender_male_normal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="42.5dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="onClick" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        android:id="@+id/profile_button_gender_female"
+                        android:src="@drawable/profile_gender_female_normal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="onClick" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 나이 입력 UI -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/profile_imageView_age"
+                    android:src="@drawable/profile_age"
+                    android:layout_marginTop="39.5dp" />
+
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textAlignment="center"
+                    android:id="@+id/profile_editText_age"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginRight="33dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginBottom="-10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClick" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_underline_age"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="43dp"
+                    android:layout_marginTop="6dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <!-- 혈액형 선택 UI -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/profile_imageView_bloodType"
+                    android:src="@drawable/profile_bloodtype_text"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginRight="42.5dp"
+                    android:layout_marginTop="33.5dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/profile_button_bloodType_A"
+                        android:src="@drawable/profile_bloodtype_a_normal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="42.5dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="onClick" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/profile_button_bloodType_B"
+                        android:src="@drawable/profile_bloodtype_b_normal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="10dp"
+                        android:onClick="onClick" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/profile_button_bloodType_O"
+                        android:src="@drawable/profile_bloodtype_o_normal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="10dp"
+                        android:onClick="onClick" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/profile_button_bloodType_AB"
+                        android:src="@drawable/profile_bloodtype_ab_normal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginRight="19dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="onClick" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 키 입력 UI -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/profile_textView_height"
+                    android:src="@drawable/profile_height_text"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="33.5dp" />
+
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textAlignment="center"
+                    android:id="@+id/profile_editText_height"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginRight="33dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginBottom="-10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClick" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_underline_height"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="43dp"
+                    android:layout_marginTop="6dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 체형 선택 UI 시작 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/profile_textView_bodyType"
+            android:src="@drawable/profile_bodytype_text"
+            android:layout_marginLeft="42.5dp"
+            android:layout_marginRight="42.5dp"
+            android:layout_marginTop="33.5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/profile_button_bodyType_skinny"
+                android:src="@drawable/profile_bodytype_skinny_normal"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="42.5dp"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/profile_button_bodyType_slim"
+                android:src="@drawable/profile_bodytype_slim_normal"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/profile_button_bodyType_normal"
+                android:src="@drawable/profile_bodytype_normal_normal"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/profile_button_bodyType_chubby"
+                android:src="@drawable/profile_bodytype_chubby_normal"
+                android:background="@android:color/transparent"
+                android:layout_marginRight="42.5dp"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick" />
+
+        </LinearLayout>
+        <!-- 체형 선택 UI 끝 -->
+
+    </LinearLayout>
+
+    <!-- 2단계로 넘어가기 버튼 -->
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/profile_next_step_button"
+            android:src="@drawable/profile_move_to_step2_normal"
+            android:background="@null"
+            android:onClick="onClick" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

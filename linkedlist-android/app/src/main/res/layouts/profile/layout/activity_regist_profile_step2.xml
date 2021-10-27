@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ep.linkedlist.MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <!-- 헤더 이미지 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:id="@+id/profile_imageView_header_step_2"
+                android:src="@drawable/profile_header_step_2"/>
+
+            <Button
+                android:layout_width="39dp"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_prev_step_button"
+                android:background="@null"
+                android:onClick="onClick" />
+
+        </FrameLayout>
+
+        <!-- 현재 단계 -->
+        <!--
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/profile_imageView_currentStep"
+            android:src="@drawable/profile_current_step_2"/>
+            -->
+
+        <!-- 종교 선택 UI 시작 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_textView_religion"
+                android:src="@drawable/profile_religion_text"
+                android:layout_marginLeft="42.5dp"
+                android:layout_marginRight="42.5dp"
+                android:layout_marginTop="30dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_religion_none"
+                    android:src="@drawable/profile_religion_none_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_religion_christianity"
+                    android:src="@drawable/profile_religion_christianity_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_religion_buddhism"
+                    android:src="@drawable/profile_religion_buddhism_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_religion_catholicism"
+                    android:src="@drawable/profile_religion_catholic_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- 종교 선택 UI 끝 -->
+
+        <!-- 지역 선택 UI 시작 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_textView_region"
+                android:src="@drawable/profile_region_text"
+                android:layout_marginLeft="42.5dp"
+                android:layout_marginRight="42.5dp"
+                android:layout_marginTop="33.5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_seoul"
+                    android:src="@drawable/profile_region_seoul_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_gyeonggi"
+                    android:src="@drawable/profile_region_gyeonggi_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_incheon"
+                    android:src="@drawable/profile_region_incheon_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_daejeon"
+                    android:src="@drawable/profile_region_daejeon_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_chungbuk"
+                    android:src="@drawable/profile_region_chungbuk_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_chungnam"
+                    android:src="@drawable/profile_region_chungnam_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_gangwon"
+                    android:src="@drawable/profile_region_gangwon_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_busan"
+                    android:src="@drawable/profile_region_busan_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_gyeongbuk"
+                    android:src="@drawable/profile_region_gyeongbuk_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_gyeongnam"
+                    android:src="@drawable/profile_region_gyeongnam_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_daegu"
+                    android:src="@drawable/profile_region_daegu_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_ulsan"
+                    android:src="@drawable/profile_region_ulsan_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_gwangju"
+                    android:src="@drawable/profile_region_gwangju_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_jeonbuk"
+                    android:src="@drawable/profile_region_jeonbuk_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_jeonnam"
+                    android:src="@drawable/profile_region_jeonnam_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/profile_button_region_jeju"
+                    android:src="@drawable/profile_region_jeju_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="42.5dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- 지역 선택 UI 끝 -->
+
+    </LinearLayout>
+
+    <!-- 3단계로 넘어가기 버튼 -->
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/profile_next_step_button"
+            android:src="@drawable/profile_move_to_step3_normal"
+            android:background="@null"
+            android:onClick="onClick" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

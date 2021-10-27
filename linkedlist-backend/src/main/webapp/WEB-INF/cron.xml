@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+    <!--
+    <cron>
+        <url>/meeting/task/invite</url>
+        <target>beta</target>
+        <description>daily summary job</description>
+        <schedule>every 1 minutes</schedule>
+    </cron>
+    -->
+</cronentries>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item type="id" name="meeting_create_button_daejeon" />
+    <item type="id" name="meeting_create_button_chungbuk" />
+    <item type="id" name="meeting_create_button_chungnam" />
+    <item type="id" name="meeting_create_button_gangwon" />
+    <item type="id" name="meeting_create_button_busan" />
+    <item type="id" name="meeting_create_button_gyeongbuk" />
+    <item type="id" name="meeting_create_button_gyeongnam" />
+    <item type="id" name="meeting_create_button_daegu" />
+    <item type="id" name="meeting_create_button_ulsan" />
+    <item type="id" name="meeting_create_button_gwangju" />
+    <item type="id" name="meeting_create_button_jeonbuk" />
+    <item type="id" name="meeting_create_button_jeonnam" />
+    <item type="id" name="meeting_create_button_jeju" />
+
+    <item type="id" name="meeting_create_step1_region_2" />
+    <item type="id" name="meeting_create_step1_region_3" />
+    <item type="id" name="meeting_create_step1_region_4" />
+
+    <item type="id" name="meeting_create_button_mountain_climbing"/>
+    <item type="id" name="meeting_create_button_walk"/>
+    <item type="id" name="meeting_create_button_camping"/>
+    <item type="id" name="meeting_create_button_travel_domestic"/>
+    <item type="id" name="meeting_create_button_travel_overseas"/>
+    <item type="id" name="meeting_create_button_fishing"/>
+    <item type="id" name="meeting_create_button_paragliding"/>
+
+    <item type="id" name="meeting_create_button_cycle"/>
+    <item type="id" name="meeting_create_button_bowling"/>
+    <item type="id" name="meeting_create_button_golf"/>
+    <item type="id" name="meeting_create_button_fitness"/>
+    <item type="id" name="meeting_create_button_table_tenis"/>
+    <item type="id" name="meeting_create_button_boxing"/>
+    <item type="id" name="meeting_create_button_climbing"/>
+    <item type="id" name="meeting_create_button_pilates"/>
+    <item type="id" name="meeting_create_button_swimming"/>
+    <item type="id" name="meeting_create_button_basketball"/>
+    <item type="id" name="meeting_create_button_yoga"/>
+
+    <item type="id" name="meeting_create_button_piano"/>
+    <item type="id" name="meeting_create_button_singing"/>
+    <item type="id" name="meeting_create_button_guitar"/>
+    <item type="id" name="meeting_create_button_drum"/>
+    <item type="id" name="meeting_create_button_hiphop"/>
+    <item type="id" name="meeting_create_button_electronic"/>
+    <item type="id" name="meeting_create_button_indie"/>
+    <item type="id" name="meeting_create_button_violin"/>
+    <item type="id" name="meeting_create_button_composition"/>
+    <item type="id" name="meeting_create_button_jazz"/>
+    <item type="id" name="meeting_create_button_band"/>
+
+    <!--
+        Your Facebook App ID. See README.
+    -->
+    <!--  TODO(developer): REPLACE -->
+    <string name="facebook_app_id">1012684465514910</string>
+</resources>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chatBackground"
+    android:orientation="vertical">
+
+    <!-- 타이틀 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#282828">
+
+        <ImageView
+            android:id="@+id/chatBackImageView"
+            android:layout_width="21.5dp"
+            android:layout_height="21.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/button_profile_back" />
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/chatNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="볼링 한게임 어때요?"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/chatMenuImageView"
+            android:layout_width="21.5dp"
+            android:layout_height="21dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="11dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/button_chat_menu" />
+
+    </RelativeLayout>
+
+    <!-- 사용자 사진 리스트 -->
+    <include layout="@layout/layout_chat_top_user_list" />
+
+    <!-- 채팅 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/frameLayout_chat"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/messageRecyclerView"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="6.25dp"
+            android:paddingBottom="6.25dp"
+            android:scrollbars="none" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/shadow_top" />
+    </FrameLayout>
+
+    <!-- IME -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFC80A"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/chatEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginLeft="13.5dp"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chat_input"
+            android:hint="메시지를 입력하세요."
+            android:paddingBottom="9dp"
+            android:paddingLeft="21dp"
+            android:paddingTop="9dp"
+            android:textSize="13.5dp"
+            android:includeFontPadding="false"/>
+
+        <RelativeLayout
+            android:layout_width="28dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="19.5dp"
+            android:layout_marginRight="18dp">
+
+            <ImageView
+                android:id="@+id/chatSendButton"
+                android:layout_width="28dp"
+                android:layout_height="21dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="18dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/button_chat_send" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

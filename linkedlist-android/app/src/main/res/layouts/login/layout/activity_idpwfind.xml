@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/find_topbg"
+        android:src="@drawable/find_topbg"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/find_back"
+        android:src="@drawable/find_back"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="47.5dp"
+        android:layout_marginTop="109dp"
+        android:id="@+id/find_id"
+        android:src="@drawable/find_id" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="47.5dp"
+        android:layout_marginTop="133.5dp"
+        android:id="@+id/find_id_description"
+        android:src="@drawable/find_id_description" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="156dp"
+        android:id="@+id/find_inputboxbg1"
+        android:src="@drawable/find_inputboxbg1" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44.5dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="143.5dp"
+        android:textSize="13.59dp"
+        android:textCursorDrawable="@null"
+        android:textColor="#777777"
+        android:textColorHint="#bbbbbb"
+        android:inputType="phone"
+        android:singleLine="true"
+        android:maxLength="11"
+        android:hint="ex)01012345678"
+        android:id="@+id/find_inputboxbg_edittext1"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="197.5dp"
+        android:id="@+id/find_ok_normal1"
+        android:src="@drawable/find_ok_normal"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="47.5dp"
+        android:layout_marginTop="265.5dp"
+        android:id="@+id/find_pw"
+        android:src="@drawable/find_pw" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="47.5dp"
+        android:layout_marginTop="290dp"
+        android:id="@+id/find_pw_description"
+        android:src="@drawable/find_pw_description" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="312.5dp"
+        android:id="@+id/find_inputboxbg2"
+        android:src="@drawable/find_inputboxbg2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44.5dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="301.5dp"
+        android:textSize="13.59dp"
+        android:textCursorDrawable="@null"
+        android:textColor="#777777"
+        android:textColorHint="#bbbbbb"
+        android:inputType="textEmailAddress"
+        android:singleLine="false"
+        android:maxLength="40"
+        android:hint="ex)help@welink.com"
+        android:id="@+id/find_inputboxbg_edittext2"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="354.5dp"
+        android:id="@+id/find_ok_normal2"
+        android:src="@drawable/find_ok_normal"
+        />
+
+</RelativeLayout>

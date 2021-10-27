@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>우 연 - Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">우 연 - Admin</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 대시보드</a>
+                        </li>
+                        <li>
+                            <a href="exam.html"><i class="fa fa-eye fa-fw"></i> 심사</a>
+                        </li>
+                        <li>
+                            <a href="room.html"><i class="fa fa-tasks fa-fw"></i> 자동 방 개설</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">자동 방 개설</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="bs-example" data-example-id="striped-table">
+                    <table class="table table-striped tableInterest">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>관심사</th>
+                            <th>남자</th>
+                            <th>여자</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <script src="../js/firebase-init.js"></script>
+
+    <script src="../js/checkAdmin.js"></script>
+
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+
+    <script>
+        com.ep.linkedList.admin.auth.check();
+
+        firebase.database().ref('interest').on('value', function(snapshot) {
+            var $tbody = $('.tableInterest tbody');
+            $tbody.empty();
+
+            var num = 0;
+            var interests = snapshot.val() || {};
+            $.each(interests, function (interest) {
+                firebase.database().ref('users/interest')
+                    .orderByChild(interest)
+                    .equalTo(true)
+                    .once('value', function(snapshot){
+                        $('#templateInterestTableRow').tmpl({
+                            num : num,
+                            interest : this.interest,
+                            maleCount : snapshot.numChildren()
+                        }).appendTo($tbody);
+                        num++;
+                    }, {interest : interest});
+
+            });
+        });
+
+        $('.tableInterest').on('click','.btnCreateRoom',function(e){
+            // room/interest, room/users, users/room 에 정보 추가
+            var interest = $(this).parents('tr').data('interest');
+            var roomId = firebase.database().ref('room/interest').push().key;
+
+            var updates = {};
+            updates['/room/interest/'+roomId+'/'+interest] = true;
+
+            // 해당 관심사를 가진 사람 검색
+            firebase.database().ref('users/interest')
+            .orderByChild(interest)
+            .equalTo(true)
+            .once('value', function(snapshot){
+                var interestUsers = snapshot.val() || {};
+                $.each(interestUsers,function(uid){
+                    updates['/room/users/'+roomId + '/'+uid] = "wait";
+                    updates['/users/room/'+uid + '/'+roomId] = "wait";
+                });
+
+                firebase.database().ref().update(updates);
+            });
+        });
+    </script>
+    <script id="templateInterestTableRow" type="text/x-jquery-tmpl">
+        <tr data-interest="${interest}">
+            <th scope="row">${num}</th>
+            <td>${interest}</td>
+            <td>${maleCount}</td>
+            <td>${femaleCount}</td>
+            <td><input class="btn btn-default btnCreateRoom" type="button" value="방개설"></td>
+        </tr>
+    </script>
+</body>
+
+</html>

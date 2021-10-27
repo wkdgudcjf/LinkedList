@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>우 연 - Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        tr.hover {
+            cursor: pointer;
+            /* whatever other hover styles you want */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">우 연 - Admin</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 대시보드</a>
+                        </li>
+                        <li>
+                            <a href="exam.html"><i class="fa fa-eye fa-fw"></i> 심사</a>
+                        </li>
+                        <li>
+                            <a href="room.html"><i class="fa fa-tasks fa-fw"></i> 자동 방 개설</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">심사</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="bs-example" data-example-id="striped-table">
+                    <table class="table table-striped tableUser">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>이메일</th>
+                            <th>이름</th>
+                            <th>uid</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">회원 정보</h4>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                        <button type="button" class="btn btn-primary btnPass">승인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <script src="../js/firebase-init.js"></script>
+
+    <script src="../js/checkAdmin.js"></script>
+
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+
+    <script>
+        com.ep.linkedList.admin.auth.check();
+
+        firebase.database().ref('users/info')
+            .orderByChild('isPassed')
+            .equalTo(false)
+            .on('value', function(snapshot) {
+                var users = snapshot.val() || {};
+                userTableChanged(users);
+            });
+
+        function userTableChanged(users){
+            var $tbody = $('.tableUser tbody');
+            $tbody.empty();
+
+            var num = 0;
+            $.each(users, function(uid, user){
+                $('#templateUserTableRow').tmpl(
+                    {
+                        num : num,
+                        displayName : user.displayName,
+                        uid : uid,
+                        email : user.email
+                    }
+                ).appendTo($tbody);
+                num++;
+            });
+        }
+
+        $('.tableUser tbody').on('click','tr', function(e) {
+            var $modalBody = $('.modal-body');
+            $modalBody.empty();
+            $('#templateUserInfo').tmpl({
+                email : $(this).data('email'),
+                displayName : $(this).data('display-name'),
+                uid : $(this).data('uid')
+             }).appendTo($modalBody);
+            $('#myModal').modal('show')
+        }).on('mouseenter mouseleave','tr', function(e) {
+            $(this).toggleClass('hover');
+        });
+
+        $('.btnPass').on('click', function(e){
+            var uid = $('.modal-body .uid').text();
+            firebase.database().ref('users/info/'+uid).update({isPassed : true});
+            $('#myModal').modal('hide')
+        });
+    </script>
+    <script id="templateUserTableRow" type="text/x-jquery-tmpl">
+        <tr data-email="${email}" data-display-name="${displayName}" data-uid="${uid}">
+            <th scope="row">${num}</th>
+            <td>${email}</td>
+            <td>${displayName}</td>
+            <td>${uid}</td>
+        </tr>
+    </script>
+    <script id="templateUserInfo" type="text/x-jquery-tmpl">
+        email : <span class="email">${email}</span></br>
+        displayName : <span class="displayName">${displayName}</span></br>
+        uid : <span class="uid">${uid}</span></br>
+    </script>
+</body>
+
+</html>

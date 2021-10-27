@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/meeting_create_scroll_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 헤더 이미지 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/meeting_create_top">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/meeting_create_top"/>
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/meeting_create_back_button"
+                    android:background="@null" />
+
+            </FrameLayout>
+
+            <!-- Step 1 -->
+            <FrameLayout
+                android:id="@+id/meeting_create_step_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/meeting_create_step1_background"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/meeting_create_step1_text"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="-20dp"
+                    android:layout_marginRight="-3dp"
+                    android:layout_marginTop="0.5dp"
+                    android:layout_marginBottom="-20dp"
+                    android:padding="20dp"
+                    android:id="@+id/meeting_create_step1_dropdown"
+                    android:src="@drawable/meeting_create_drop_down_menu_arrow"
+                    android:background="@null"
+                    android:tag="1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step1_region_1">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_seoul"
+                        android:src="@drawable/meeting_create_step1_button_seoul_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="서울"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_gyeonggi"
+                        android:src="@drawable/meeting_create_step1_button_gyeonggi_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="경기"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_incheon"
+                        android:src="@drawable/meeting_create_step1_button_incheon_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="인천"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step1_region_2">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step1_region_3">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step1_region_4">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step1_region_5">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step1_region_6">
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Step 2 -->
+            <FrameLayout
+                android:id="@+id/meeting_create_step_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/meeting_create_step2_background"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/meeting_create_step2_text"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_2to2"
+                        android:src="@drawable/meeting_create_step2_2to2_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="4"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_3to3"
+                        android:src="@drawable/meeting_create_step2_3to3_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="6"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_4to4"
+                        android:src="@drawable/meeting_create_step2_4to4_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="8"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Step 3 -->
+            <FrameLayout
+                android:id="@+id/meeting_create_step_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/meeting_create_step3_background"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/meeting_create_step3_text"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_travel"
+                        android:src="@drawable/meeting_create_step3_travel_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="여행"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_exercise"
+                        android:src="@drawable/meeting_create_step3_exercise_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="운동"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_music"
+                        android:src="@drawable/meeting_create_step3_music_normal"
+                        android:background="@android:color/transparent"
+                        android:tag="음악"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Step 4 -->
+            <FrameLayout
+                android:id="@+id/meeting_create_step_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/meeting_create_step4_background_disabled"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/meeting_create_step4_text"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="-20dp"
+                    android:layout_marginRight="-3dp"
+                    android:layout_marginTop="0.5dp"
+                    android:layout_marginBottom="-20dp"
+                    android:padding="20dp"
+                    android:id="@+id/meeting_create_step4_dropdown"
+                    android:src="@drawable/meeting_create_drop_down_menu_arrow"
+                    android:background="@null"
+                    android:visibility="invisible"
+                    android:tag="4"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step4_subCategory_1">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_bowling"
+                        android:src="@drawable/meeting_create_step4_button_bowling_normal"
+                        android:background="@android:color/transparent"
+                        android:onClick="onSubCategoryButtonClicked"
+                        android:tag="볼링"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_golf"
+                        android:src="@drawable/meeting_create_step4_button_golf_normal"
+                        android:background="@android:color/transparent"
+                        android:onClick="onSubCategoryButtonClicked"
+                        android:tag="골프"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/meeting_create_button_cycle"
+                        android:src="@drawable/meeting_create_step4_button_cycle_normal"
+                        android:background="@android:color/transparent"
+                        android:onClick="onSubCategoryButtonClicked"
+                        android:tag="자전거"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step4_subCategory_2">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step4_subCategory_3">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step4_subCategory_4">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34.5dp"
+                    android:layout_marginRight="34.5dp"
+                    android:layout_marginTop="56.5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/meeting_create_step4_subCategory_5">
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Step 5 -->
+            <FrameLayout
+                android:id="@+id/meeting_create_step_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/meeting_create_step5_background_disabled"
+                android:orientation="vertical"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.5dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/meeting_create_step5_text"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginRight="23dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginBottom="22dp"
+                    android:padding="10dp"
+                    android:layout_gravity="bottom"
+                    android:id="@+id/meeting_create_edittext_meeting_name"
+                    android:background="@null"
+                    android:hint="자전거 초보끼리 같이 타요~"
+                    android:textSize="13dp"
+                    android:maxLines="1"
+                    android:maxLength="30"
+                    android:inputType="text"
+                    android:enabled="false"
+                    android:textColorHint="#cecece"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginRight="33dp"
+                    android:layout_marginBottom="22dp"
+                    android:layout_gravity="bottom"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/meeting_create_step5_underline"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- 우연 만들기 버튼 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:id="@+id/meeting_create_button_submit"
+            android:src="@drawable/meeting_create_button_submit_enable"
+            android:background="@null"
+            android:enabled="false"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/meeting_create_button_submit_text"
+            android:src="@drawable/meeting_create_button_submit_text"
+            android:background="@null"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/meeting_create_touch_intercaptor">
+
+    </FrameLayout>
+
+</RelativeLayout>

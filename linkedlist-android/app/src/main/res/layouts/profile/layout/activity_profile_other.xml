@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 헤더 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#282828">
+
+        <ImageView
+            android:id="@+id/profileOtherBackImageView"
+            android:layout_width="21.5dp"
+            android:layout_height="21.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/button_profile_back" />
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="프로필"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <!-- 사진 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="361dp">
+
+        <ImageView
+            android:id="@+id/profileOtherPhotoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_profile_photo" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="64.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_profile_photo_bottom">
+
+            <com.ep.linkedlist.view.common.LinkedListTextView
+                android:id="@+id/profileOtherNicknameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="10.0dp"
+                android:paddingTop="0dp"
+                android:text="효돌이에요"
+                android:textColor="#ffffff"
+                android:textSize="17.5dp"/>
+
+            <com.ep.linkedlist.view.common.LinkedListTextView
+                android:id="@+id/profileOtherRegionAgeSummaryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/profileOtherNicknameTextView"
+                android:layout_below="@id/profileOtherNicknameTextView"
+                android:layout_marginTop="0dp"
+                android:paddingTop="0dp"
+                android:text="서울 28세"
+                android:textColor="#F50057"
+                android:textSize="13dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:paddingLeft="22.5dp"
+        android:paddingRight="22.5dp">
+
+        <!-- 소개 / 프로필 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <!-- 반가워요 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:background="@drawable/profile_other_bottom_line">
+
+                <!-- 레이블 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="반가워요"
+                    android:textColor="#939393"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="13dp"/>
+
+                <!-- 내용 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:id="@+id/profileOtherRegionAgeGenderTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="65dp"
+                    android:text="서울에 사는 28살 남자에요."
+                    android:textColor="#000000"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+            <!-- 체형 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:background="@drawable/profile_other_bottom_line">
+
+                <!-- 레이블 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="체형"
+                    android:textColor="#939393"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="13dp" />
+
+                <!-- 내용 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:id="@+id/profileOtherHeightBodyTypeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="65dp"
+                    android:text="키는 187cm, 스키니한 체형입니다."
+                    android:textColor="#000000"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+            <!-- 종교 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:background="@drawable/profile_other_bottom_line">
+
+                <!-- 레이블 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="종교"
+                    android:textColor="#939393"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="13dp" />
+
+                <!-- 내용 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:id="@+id/profileOtherReligionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="65dp"
+                    android:text="종교는 기독교입니다."
+                    android:textColor="#000000"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+            <!-- 혈액형 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:background="@drawable/profile_other_bottom_line">
+
+                <!-- 레이블 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="혈액형"
+                    android:textColor="#939393"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="13dp" />
+
+                <!-- 내용 -->
+                <com.ep.linkedlist.view.common.LinkedListTextView
+                    android:id="@+id/profileOtherBloodTypeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="9dp"
+                    android:layout_marginLeft="65dp"
+                    android:text="혈액형은 b형입니다."
+                    android:textColor="#000000"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

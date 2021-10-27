@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/wait"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="참여중인 우연 목록"/>
+
+        <LinearLayout
+            android:id="@+id/meetingListInWait"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+        </LinearLayout>
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="대화가 시작된 우연 목록"/>
+
+        <LinearLayout
+            android:id="@+id/meetingListInStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- 사람 정보 영역 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48.5dp"
+        android:layout_marginBottom="9.5dp"
+        android:layout_marginLeft="11.5dp"
+        android:layout_marginRight="11.5dp"
+        android:layout_marginTop="13dp">
+
+        <!-- 사진 -->
+        <ImageView
+            android:id="@+id/chatMessagePhotoImageView"
+            android:layout_width="48.5dp"
+            android:layout_height="48.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/image_profile_photo" />
+
+        <!-- 닉네임 -->
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/chatMessageNicknameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10.5dp"
+            android:layout_marginTop="5.75dp"
+            android:layout_toLeftOf="@id/chatMessagePhotoImageView"
+            android:text="효돌이에요"
+            android:textColor="#272727"
+            android:textSize="13.5dp"
+            app:fontWeight="medium"/>
+
+        <!-- 시간 -->
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/chatMessageTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/chatMessageNicknameTextView"
+            android:layout_below="@id/chatMessageNicknameTextView"
+            android:layout_marginTop="-4dp"
+            android:text="16:35"
+            android:textColor="#C0C0C0"
+            android:textSize="9.5dp" />
+
+    </RelativeLayout>
+    <!-- //사람 정보 영역 -->
+
+    <include layout="@layout/item_message_right" />
+
+</LinearLayout>

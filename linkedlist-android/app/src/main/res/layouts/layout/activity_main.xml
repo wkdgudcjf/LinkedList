@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/login_bg"
+    android:fitsSystemWindows="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:textColor="#ffffff"
+        android:hint="@string/hint_email"
+        android:textColorHint="#000000"
+        android:singleLine="true"
+        android:maxLength="30"
+        android:id="@+id/email"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:textColor="#ffffff"
+        android:hint="@string/hint_password"
+        android:textColorHint="#aaaaaa"
+        android:singleLine="true"
+        android:maxLength="20"
+        android:id="@+id/password"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340.5dp"
+        android:layout_marginLeft="48dp"
+        android:id="@+id/login_login_normal"
+        android:src="@drawable/login_login_normal"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="386.5dp"
+        android:layout_marginLeft="128.5dp"
+        android:id="@+id/login_idpwfind"
+        android:src="@drawable/login_idpwfind"
+        android:scaleType="fitXY"/>
+
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="466.5dp"
+        android:layout_marginLeft="65.5dp"
+        android:id="@+id/login_facebook_normal"
+        android:src="@drawable/login_facebook_normal"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="466.5dp"
+        android:layout_marginLeft="207.5dp"
+        android:id="@+id/login_google_normal"
+        android:src="@drawable/login_google_normal"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="558.5dp"
+        android:id="@+id/login_join_normal"
+        android:src="@drawable/login_join_normal"
+        android:scaleType="fitXY"/>
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/chatListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:divider="@null" />
+
+
+    <ImageView
+        android:id="@+id/chatListEmptyImageView"
+        android:layout_centerInParent="true"
+        android:layout_width="174.5dp"
+        android:layout_height="89dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/chat_fragment_list_empty"/>
+</RelativeLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!-- 유저 사진 백그라운드 Blur 먹인 것 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/profile_user_photo_background"
+        android:layout_height="224dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/profile_user_photo_background_default"
+        android:scaleType="fitXY"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/profile_user_photo_background2"
+        android:layout_height="224dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/profile_user_photo_background_default"
+        android:scaleType="fitXY"/>
+    <!-- 유저 원형 사진 -->
+    <ImageView
+        android:layout_width="165dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="141.5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#00000000"
+        android:id="@+id/profile_red_circle"
+        android:src="@drawable/profile_red_circle" />
+
+    <LinearLayout
+        android:layout_width="142.5dp"
+        android:layout_height="143dp"
+        android:layout_marginTop="153dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_circleView_userPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_default_user_photo" />
+
+    </LinearLayout>
+
+    <!-- 유저 닉네임 -->
+    <com.ep.linkedlist.view.common.LinkedListTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_red_circle"
+        android:layout_marginTop="15dp"
+        android:id="@+id/profile_TextView_UserNickName"
+        android:text="효돌이에요"
+        android:textSize="18.5dp"
+        android:textColor="#272727"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_TextView_UserNickName"
+        android:layout_marginTop="30dp"
+        android:id="@+id/profile_buttonGroup"
+        android:weightSum="2">
+
+        <!-- 프로필 변경 버튼 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="76.5dp"
+                android:id="@+id/profile_button_modify_profile"
+                android:src="@drawable/profile_button_modify_profile"
+                android:background="@null"/>
+
+        </LinearLayout>
+
+        <!-- 사진 변경 버튼 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="76.5dp"
+                android:id="@+id/profile_button_modify_photo"
+                android:src="@drawable/profile_button_modify_photo"
+                android:background="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 로그아웃 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_buttonGroup"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/profile_button_logout"
+            android:src="@drawable/profile_button_logout"
+            android:background="@null" />
+
+    </LinearLayout>
+
+</RelativeLayout>

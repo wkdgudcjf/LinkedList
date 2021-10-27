@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="97.5dp"
+    android:background="@drawable/chat_list_bottom_line">
+
+    <!-- 채팅방 사진 -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemChatListPhotoCircleImageView"
+        android:layout_width="61.5dp"
+        android:layout_height="61dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="11dp"
+        android:src="@drawable/chatlist_photo" />
+
+    <!-- 채팅방 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="90.5dp"
+        android:layout_marginRight="61.5dp">
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/itemChatListNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="볼링 한 게임 어때요?"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="26dp"
+            android:textColor="#4B4B4B"
+            android:textSize="16.5dp"
+            app:fontWeight="bold" />
+
+        <RelativeLayout
+            android:layout_width="24.5dp"
+            android:layout_height="15dp"
+            android:layout_alignBottom="@id/itemChatListNameTextView"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toRightOf="@id/itemChatListNameTextView"
+            android:background="@drawable/chat_list_user_count">
+
+            <com.ep.linkedlist.view.common.LinkedListTextView
+                android:id="@+id/itemChatListUserCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="3:3"
+                android:textSize="9dp" />
+        </RelativeLayout>
+
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/itemChatListLastContentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/itemChatListNameTextView"
+            android:layout_below="@id/itemChatListNameTextView"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="좋은 것 같더라구요^^"
+            android:lineSpacingMultiplier="0.8"
+            android:textColor="#6C6C6C" />
+    </RelativeLayout>
+
+    <!-- 시간, 안읽은 메시지 개수 영역 -->
+    <RelativeLayout
+        android:layout_width="61.5dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+
+        <com.ep.linkedlist.view.common.LinkedListTextView
+            android:id="@+id/itemChatListTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10.5dp"
+            android:layout_marginTop="33.5dp"
+            android:text="오후 2:33"
+            android:textColor="#6B6B6B"
+            android:textSize="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/itemChatListNoReadCountRelativeLayout"
+            android:layout_width="23.5dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/itemChatListTimeTextView"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="8.5dp"
+            android:background="@drawable/chat_list_no_read_count_bg">
+
+            <com.ep.linkedlist.view.common.LinkedListTextView
+                android:id="@+id/itemChatListNoReadCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="4.5dp"
+                android:text="3"
+                android:textColor="#ffffff"
+                android:textSize="9.5dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

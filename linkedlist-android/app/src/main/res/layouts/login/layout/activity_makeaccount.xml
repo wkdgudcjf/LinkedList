@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/join_topbg"
+        android:src="@drawable/join_topbg"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14.5dp"
+        android:layout_marginLeft="11dp"
+        android:id="@+id/join_back"
+        android:src="@drawable/join_back"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="84dp"
+        android:id="@+id/makeaccount_email"
+        android:src="@drawable/makeaccount_email"/>
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="109.5dp"
+        android:id="@+id/test_1"
+        android:src="@drawable/email_test"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44.5dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="98dp"
+        android:textSize="13.59dp"
+        android:hint="ex)help.welink.com"
+        android:id="@+id/makeaccount_email_temp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="163dp"
+        android:id="@+id/makeaccount_password"
+        android:src="@drawable/makeaccount_password"/>
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="187.5dp"
+        android:id="@+id/test_2"
+        android:src="@drawable/email_test"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44.5dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="175.5dp"
+        android:textSize="13.59dp"
+        android:hint="최대 10자리 영문/숫자 혼용"
+        android:id="@+id/makeaccount_password_temp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="242dp"
+        android:id="@+id/makeaccount_password_check"
+        android:src="@drawable/makeaccount_password_check"/>
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="266.5dp"
+        android:id="@+id/test_3"
+        android:src="@drawable/email_test"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44.5dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="254.5dp"
+        android:textSize="13.59dp"
+        android:hint="비밀번호를 다시 입력해주세요."
+        android:id="@+id/makeaccount_passwordcheck"/>
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48.5dp"
+        android:layout_marginTop="321.5dp"
+        android:id="@+id/checkbox_test"
+        android:src="@drawable/checkbox_test"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="314dp"
+        android:text="이용약관에 동의합니다"
+        android:id="@+id/checkBox"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="345dp"
+        android:text="개인정보 취급 방침에 동의합니다."
+        android:id="@+id/checkBox2"/>
+
+    <ImageButton
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="559.5dp"
+        android:id="@+id/join_start_normal"
+        android:src="@drawable/join_start_normal"
+        android:scaleType="fitXY"/>
+
+</RelativeLayout>
